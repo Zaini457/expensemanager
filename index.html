@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-wallet header-icon"></i>
+            <h1>Expense Manager</h1>
+            <p class="tagline">Track your money, master your finances.</p>
+        </header>
+
+        <div class="balance-container">
+            <div class="balance-item income">
+                <h2>Income</h2>
+                <p id="income-display">$0.00</p>
+            </div>
+            <div class="balance-item expense">
+                <h2>Expense</h2>
+                <p id="expense-display">$0.00</p>
+            </div>
+            <div class="balance-item total">
+                <h2>Total Balance</h2>
+                <p id="total-balance-display">$0.00</p>
+            </div>
+        </div>
+
+        <section class="add-transaction card">
+            <h2><i class="fas fa-plus-circle"></i> Add New Transaction</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="e.g., Groceries, Salary" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount" placeholder="e.g., 50.00" required>
+                </div>
+                <button type="submit"><i class="fas fa-money-bill-wave"></i> Add Transaction</button>
+            </form>
+        </section>
+
+        <section class="analytics card">
+            <h2><i class="fas fa-chart-pie"></i> Spending by Category</h2>
+            <div id="category-summary">
+                <p class="no-data-message">No expense data to display yet.</p>
+            </div>
+        </section>
+
+        <section class="transaction-history card">
+            <h2><i class="fas fa-history"></i> Transaction History</h2>
+            <ul id="transaction-list">
+                </ul>
+            <p id="no-transactions-message" class="no-data-message">No transactions recorded yet.</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
